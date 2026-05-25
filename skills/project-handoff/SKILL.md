@@ -11,8 +11,9 @@ argument-hint: "What will the next session be used for?"
 3. Check whether any critical decisions were made that are not yet captured in an ADR. If so, create a new ADR in `./docs/adr/` following the template and naming convention defined in `/grill-with-docs`. Reference it in the handoff document.
 4. Check whether any new domain terms or concepts emerged in the session. If so, add entries to `./docs/CONTEXT.md` following the format defined in `/grill-with-docs`.
 5. Write the handoff document to `./docs/handoffs/`:
-   - Summarise the session and suggest next steps
-   - Include a "suggested skills" section listing skills the next agent should invoke
+   - Summarise the session
+   - List outstanding work — but only items explicitly present in the session: uncommitted code, incomplete plan steps, things the user flagged as not done. Do not invent next steps. If nothing is outstanding, omit the section entirely.
+   - If the next session's focus is clearly different from this session's work, include a brief "suggested skills" section — otherwise omit it. Do not add it by default.
    - Reference existing artifacts (PRDs, plans, ADRs, commits, diffs) by path or URL; do not duplicate their content
    - Consult `./docs/CONTEXT.md` for established terminology and use it consistently
    - Redact any sensitive information (API keys, passwords, PII)
