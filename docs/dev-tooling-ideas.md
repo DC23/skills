@@ -1,5 +1,7 @@
 # Dev Tooling Ideas
 
+> **Superseded.** This is the original braindump. The canonical plan is [`docs/roadmap.md`](./roadmap.md).
+
 Captured 2026-05-26. Evolving notes on the skill-based session management tooling.
 
 ## Skills to build
