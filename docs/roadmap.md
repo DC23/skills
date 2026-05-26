@@ -27,7 +27,7 @@ This ecosystem is heavily inspired by [Matt Pocock's engineering skills](https:/
 | `to-issues` | Minor revision | 2 | `setup-dc23-skills` |
 | `project-handoff` | Heavy revision | 3 | Artefact formats (Phase 1) |
 | `grill-with-domain` | To build | 4 | `DOMAIN_DICTIONARY.md` format |
-| `triage` | Minor revision | 4 | `setup-dc23-skills`, `grill-with-domain` |
+| `triage` | Substantial revision | 4b | `setup-dc23-skills`, `grill-with-domain` |
 | `session-start` | To build | 5 | Handoff template, `DOMAIN_DICTIONARY.md`, `tdd` |
 
 `setup-matt-pocock-skills` is superseded by `setup-dc23-skills` for this ecosystem. `to-issues` and `triage` are installed from mattpocock/skills and will be revised in place.
@@ -48,6 +48,8 @@ Each phase has its own planning session before implementation begins. The phases
 
 ### Phase 0 — Reorganise skill directories
 
+Status: implementation complete
+
 Mirror the mattpocock repository layout: engineering skills in a subdirectory, general utility skills in a separate one.
 
 - Create `skills/engineering/` and move `tdd/` and `project-handoff/` into it
@@ -55,7 +57,7 @@ Mirror the mattpocock repository layout: engineering skills in a subdirectory, g
 - Create a directory for general utility skills (name TBD) and move `review-plugin/` into it, with its own README
 - All new engineering skills land in `skills/engineering/` from the start
 
-### Phase 1 — Standardise artefacts
+### Phase 1 — Standardise artefacts (DC23/skills#9)
 
 Design the artefact formats before any skill is written or updated. This phase is primarily a design and writing session, not implementation.
 
@@ -63,7 +65,7 @@ Design the artefact formats before any skill is written or updated. This phase i
 2. **Handoff doc template** — define the standard summary block (fields, location, length constraints). Stored as `docs/handoffs/TEMPLATE.md`. Both `project-handoff` and `session-start` depend on this being stable.
 3. **ADR index format** — one-line entry per ADR: filename link plus searchable topics. Simple, but needs a canonical form before skills start maintaining it.
 
-### Phase 2 — `setup-dc23-skills` and `to-issues`
+### Phase 2 — `setup-dc23-skills` and `to-issues` (DC23/skills#10)
 
 Build the bootstrapper that creates the Phase 1 artefacts in any new project. Writing the setup skill forces the artefact formats to be fully specified — the seed templates bundled with the skill are the canonical definitions.
 
@@ -71,7 +73,7 @@ Modelled on `setup-matt-pocock-skills`: interactive and prompt-driven, not a det
 
 Also in this phase: update `to-issues` — one line, replacing the `/setup-matt-pocock-skills` reference with `/setup-dc23-skills`. No other changes needed.
 
-### Phase 3 — Update `project-handoff`
+### Phase 3 — Update `project-handoff` (DC23/skills#11)
 
 Update the existing skill to write to the new artefacts:
 
@@ -79,13 +81,21 @@ Update the existing skill to write to the new artefacts:
 - Handoff output follows the Phase 1 template; the skill references it explicitly
 - ADR index is maintained alongside each new ADR entry
 
-### Phase 4 — `grill-with-domain` and `triage`
+### Phase 4 — `grill-with-domain` (DC23/skills#12)
 
 Fork `grill-with-docs` to target `DOMAIN_DICTIONARY.md`. The grilling questions need adapting for domain-model structure (entity relationships, terminology decisions, the *why* behind names) rather than a flat context dump. The skill also maintains the ADR index on decisions crystallised during the session.
 
-Also in this phase: update `triage` — two lines, replacing `/setup-matt-pocock-skills` and `/grill-with-docs` with `/setup-dc23-skills` and `/grill-with-domain`. Domain glossary references are already artefact-agnostic.
+### Phase 4b — Revise `triage` (DC23/skills#14)
 
-### Phase 5 — `session-start`
+More than a reference update. Two areas of work:
+
+**Category model** — extend from two categories (`bug`, `enhancement`) to three: `bug`, `enhancement` (community-requested), and `roadmap` (planned project work). The distinction is semantically meaningful — a roadmap issue doesn't require community validation or the same fleshing-out process as a cold feature request, and it's a common pattern across projects.
+
+**Reference updates** — replace `/setup-matt-pocock-skills` with `/setup-dc23-skills` and `/grill-with-docs` with `/grill-with-domain`.
+
+Note: the state role labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`) are absent from the repo — likely due to an interrupted setup session rather than a deliberate omission. Confirm whether `setup-dc23-skills` needs to own this or whether it's handled by completing setup.
+
+### Phase 5 — `session-start` (DC23/skills#13)
 
 Build the session-open counterpart to `project-handoff`. The skill has two distinct sections:
 
