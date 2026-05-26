@@ -66,3 +66,5 @@ The skill is also formalising a manual ritual — the same bootstrapping prompt 
 
 - organise this file. Right now it's a chaotic braindump of thoughts.
 - build and priortise issues for this repo
+- matt-pocock skills to build from: setup, to-issues, triage, grill-with-docs, tdd
+  - tdd is done
