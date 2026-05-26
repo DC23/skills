@@ -29,6 +29,20 @@ Use `/skill-creator` to create, edit, evaluate, or benchmark skills. It handles 
 
 Use `/review-plugin` before installing any third-party skill.
 
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in GitHub Issues on `DC23/skills`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Uses the five canonical triage labels with default strings. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context layout: one `CONTEXT.md` at the repo root, `docs/adr/` for decisions. See `docs/agents/domain.md`.
+
 ## Conventions
 
 - British English in skill prose
