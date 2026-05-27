@@ -116,19 +116,19 @@ Single-context layout: one `DOMAIN_DICTIONARY.md` at the repo root, `docs/adr/` 
 
 Then write the docs files using the seed templates in this skill folder:
 
-- [issue-tracker-github.md](./issue-tracker-github.md) — GitHub issue tracker
-- [issue-tracker-gitlab.md](./issue-tracker-gitlab.md) — GitLab issue tracker
-- [issue-tracker-local.md](./issue-tracker-local.md) — local-markdown issue tracker
-- [triage-labels.md](./triage-labels.md) — label mapping
-- [domain.md](./domain.md) — domain doc consumer rules + layout
+- [issue-tracker-github.md](./assets/issue-tracker-github.md) — GitHub issue tracker
+- [issue-tracker-gitlab.md](./assets/issue-tracker-gitlab.md) — GitLab issue tracker
+- [issue-tracker-local.md](./assets/issue-tracker-local.md) — local-markdown issue tracker
+- [triage-labels.md](./assets/triage-labels.md) — label mapping
+- [domain.md](./assets/domain.md) — domain doc consumer rules + layout
 
 For "other" issue trackers, write `docs/agents/issue-tracker.md` from scratch using the user's description.
 
 Additionally, write these files silently (no user decision required — they are fixed-format Phase 1 artefacts):
 
-- `docs/agents/adr.md` from [adr.md](./adr.md)
-- `docs/agents/plans.md` from [plans.md](./plans.md)
-- `docs/handoffs/TEMPLATE.md` from [handoff-template.md](./handoff-template.md) — create `docs/handoffs/` if needed
+- `docs/agents/adr.md` from [adr.md](./assets/adr.md)
+- `docs/agents/plans.md` from [plans.md](./assets/plans.md)
+- `docs/handoffs/TEMPLATE.md` from [handoff-template.md](./assets/handoff-template.md) — create `docs/handoffs/` if needed
 
 Do not overwrite any of these files if they already exist and contain user content — check first and skip or ask.
 
