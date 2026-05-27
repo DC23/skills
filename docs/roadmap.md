@@ -77,11 +77,17 @@ Built `setup-dc23-skills`: interactive and prompt-driven, modelled on `setup-mat
 
 ### Phase 3 — Update `project-handoff` (DC23/skills#11)
 
+Status: implementation complete
+
 Update the existing skill to write to the new artefacts:
 
 - Domain terms: the skill **flags** candidate terms in the handoff document ("these terms appeared this session and may warrant dictionary entries") rather than writing them to `DOMAIN_DICTIONARY.md` directly. `grill-with-domain` is the write path for the dictionary; `project-handoff` feeds it a backlog. This keeps handoff lightweight and dictionary entries properly reasoned.
 - Handoff output follows the Phase 1 template; the skill references it explicitly
 - ADR index is maintained alongside each new ADR entry
+
+#### Notes from user
+
+- domain terms can't be flagged into harness memory. I work across machines, or with small teams. The implementation of candidate terms needs a source controlled backlog file in the project, so it's persistent and shared. Once reviewed and added to the domain dictionary, they can be deleted but if reviewed and not added then perhaps they should be retained with a reason for why they weren't added. This can avoid reprosecuting the same terms again later. Or maybe they are an alias or duplicate, and added to the domain dictionary as aliases to avoid.
 
 ### Phase 4 — `grill-with-domain` (DC23/skills#12)
 
@@ -102,8 +108,9 @@ Note: the state role labels (`needs-triage`, `needs-info`, `ready-for-agent`, `r
 Build the session-open counterpart to `project-handoff`. The skill has two distinct sections:
 
 **Workflow** — what the skill does on invocation:
+
 1. Load memory index
-2. Load `DOMAIN_DICTIONARY.md`
+2. Load `docs/DOMAIN_DICTIONARY.md`
 3. Load `tdd` skill
 4. Read the summary block from the most recent handoff doc (not the full document — this is why the Phase 1 template matters)
 5. Read the most relevant open plan, if one exists
@@ -111,6 +118,7 @@ Build the session-open counterpart to `project-handoff`. The skill has two disti
 7. Report ready
 
 **Standing instructions** — behavioural conventions that govern the session, replacing what would otherwise clutter `CLAUDE.md`:
+
 - Check `docs/handoffs/INDEX.md` before re-deriving past work
 - Use `tdd` for all implementation tasks
 - Other session conventions as they emerge

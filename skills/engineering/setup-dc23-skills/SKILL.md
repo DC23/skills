@@ -10,7 +10,7 @@ Scaffold the per-repo configuration that the DC23 engineering skills assume:
 
 - **Issue tracker** — where issues live (GitHub by default; local markdown is also supported)
 - **Triage labels** — the strings used for the five canonical triage roles
-- **Domain docs** — where `DOMAIN_DICTIONARY.md` and ADRs live, and the consumer rules for reading them
+- **Domain docs** — where `docs/DOMAIN_DICTIONARY.md` and ADRs live, and the consumer rules for reading them
 
 This is a prompt-driven skill, not a deterministic script. Explore, present what you found, confirm with the user, then write.
 
@@ -22,7 +22,7 @@ Look at the current repo to understand its starting state. Read whatever exists;
 
 - `git remote -v` and `.git/config` — is this a GitHub repo? Which one?
 - `AGENTS.md` and `CLAUDE.md` at the repo root — does either exist? Is there already an `## Agent skills` section in either?
-- `DOMAIN_DICTIONARY.md` at the repo root
+- `docs/DOMAIN_DICTIONARY.md`
 - `docs/adr/`
 - `docs/handoffs/`
 - `docs/agents/` — does this skill's prior output already exist?
@@ -61,19 +61,19 @@ Default: each role's string equals its name. Ask the user if they want to overri
 
 **Section C — Domain docs.**
 
-> Explainer: Skills like `tdd`, `grill-with-domain`, `project-handoff`, and `session-start` read a `DOMAIN_DICTIONARY.md` file to understand the project's domain language — entity relationships, terminology decisions, and the *why* behind naming choices. They also read `docs/adr/` for past architectural decisions. This skill will create the `docs/agents/domain.md` file that tells those skills where to look and how to interpret what they find. No decisions are required — just confirm this layout matches your repo's structure.
+> Explainer: Skills like `tdd`, `grill-with-domain`, `project-handoff`, and `session-start` read a `docs/DOMAIN_DICTIONARY.md` file to understand the project's domain language — entity relationships, terminology decisions, and the *why* behind naming choices. They also read `docs/adr/` for past architectural decisions. This skill will create the `docs/agents/domain.md` file that tells those skills where to look and how to interpret what they find. No decisions are required — just confirm this layout matches your repo's structure.
 
 The DC23 skills always use a single-context layout:
 
 ```
-/
+docs/
 ├── DOMAIN_DICTIONARY.md
-└── docs/adr/
+└── adr/
 ```
 
 Confirm this matches the target repo. If the user has a significantly different structure, note it and proceed as close to this layout as possible.
 
-Note: `DOMAIN_DICTIONARY.md` is created lazily by `/grill-with-domain`, not by this skill. Its absence is normal.
+Note: `docs/DOMAIN_DICTIONARY.md` is created lazily by `/grill-with-domain`, not by this skill. Its absence is normal.
 
 ### 3. Confirm and edit
 
@@ -111,7 +111,7 @@ The block:
 
 ### Domain docs
 
-Single-context layout: one `DOMAIN_DICTIONARY.md` at the repo root, `docs/adr/` for decisions. See `docs/agents/domain.md`.
+Single-context layout: `docs/DOMAIN_DICTIONARY.md`, `docs/adr/` for decisions. See `docs/agents/domain.md`.
 ```
 
 Then write the docs files using the seed templates in this skill folder:

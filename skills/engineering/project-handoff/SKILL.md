@@ -8,13 +8,14 @@ argument-hint: "What will the next session be used for?"
 
 1. Update project memory with any new information from the session.
 2. Check whether an incomplete plan exists. If so, save it to `./docs/plans/` and reference it in the handoff document.
-3. Check whether any critical decisions were made that are not yet captured in an ADR. If so, create a new ADR in `./docs/adr/` following the template and naming convention defined in `/grill-with-docs`. Reference it in the handoff document.
-4. Check whether any new domain terms or concepts emerged in the session. If so, add entries to `./docs/CONTEXT.md` following the format defined in `/grill-with-docs`.
-5. Write the handoff document to `./docs/handoffs/`:
-   - Summarise the session
-   - List outstanding work — but only items explicitly present in the session: uncommitted code, incomplete plan steps, things the user flagged as not done. Do not invent next steps. If nothing is outstanding, omit the section entirely.
-   - Reference existing artifacts (PRDs, plans, ADRs, commits, diffs) by path or URL; do not duplicate their content
-   - Consult `./docs/CONTEXT.md` for established terminology and use it consistently
+3. Check whether any critical decisions were made that are not yet captured in an ADR. If so, create a new ADR in `./docs/adr/` following the format in `docs/agents/adr.md`. Maintain the ADR index. Reference it in the handoff document.
+4. Identify candidate Ubiquitous Language terms that emerged this session. The standard is DDD Ubiquitous Language: domain entities, relationships, and named processes that domain experts and developers would use consistently — not implementation details or incidental vocabulary. For each candidate: check whether it is already defined in `docs/DOMAIN_DICTIONARY.md` (it may already be in context from `session-start`); if not defined, append an entry to `docs/DOMAIN_CANDIDATES.md` (create the file if absent) using the format in `docs/agents/domain.md`. Be conservative — fewer, well-chosen candidates are more useful than a long list of noise.
+5. Write the handoff document to `./docs/handoffs/` following the template at `docs/handoffs/TEMPLATE.md`:
+   - Summary block first (Baseline and Outstanding fields, as defined in the template)
+   - Free-form narrative sections below — use whatever headings suit the session
+   - List outstanding work only for items explicitly present in the session: uncommitted code, incomplete plan steps, things the user flagged as not done. Do not invent next steps. Omit the Outstanding field entirely if nothing is outstanding.
+   - Reference existing artefacts (plans, ADRs, commits, diffs) by path or URL; do not duplicate their content
+   - Use the vocabulary from `docs/DOMAIN_DICTIONARY.md` consistently
    - Redact any sensitive information (API keys, passwords, PII)
    - If arguments were passed, treat them as the next session's focus and tailor the document accordingly
    - Append a one-line entry to `./docs/handoffs/INDEX.md` — filename link plus a short list of searchable topics and artefacts (enough to locate the file without opening it)
