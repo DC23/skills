@@ -13,7 +13,6 @@ argument-hint: "What will the next session be used for?"
 5. Write the handoff document to `./docs/handoffs/`:
    - Summarise the session
    - List outstanding work — but only items explicitly present in the session: uncommitted code, incomplete plan steps, things the user flagged as not done. Do not invent next steps. If nothing is outstanding, omit the section entirely.
-   - If the next session's focus is clearly different from this session's work, include a brief "suggested skills" section — otherwise omit it. Do not add it by default.
    - Reference existing artifacts (PRDs, plans, ADRs, commits, diffs) by path or URL; do not duplicate their content
    - Consult `./docs/CONTEXT.md` for established terminology and use it consistently
    - Redact any sensitive information (API keys, passwords, PII)
