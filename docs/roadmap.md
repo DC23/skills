@@ -23,8 +23,8 @@ This ecosystem is heavily inspired by [Matt Pocock's engineering skills](https:/
 | Skill | Status | Phase | Depends on |
 | --- | --- | --- | --- |
 | `tdd` | Done (heavy revision) | — | — |
-| `setup-dc23-skills` | To build | 2 | Artefact formats (Phase 1) |
-| `to-issues` | Minor revision | 2 | `setup-dc23-skills` |
+| `setup-dc23-skills` | Done | 2 | Artefact formats (Phase 1) |
+| `to-issues` | Done (DC23 revision) | 2 | `setup-dc23-skills` |
 | `project-handoff` | Heavy revision | 3 | Artefact formats (Phase 1) |
 | `grill-with-domain` | To build | 4 | `DOMAIN_DICTIONARY.md` format |
 | `triage` | Substantial revision | 4b | `setup-dc23-skills`, `grill-with-domain` |
@@ -69,13 +69,11 @@ Design the artefact formats before any skill is written or updated. This phase i
 
 ### Phase 2 — `setup-dc23-skills` and `to-issues` (DC23/skills#10)
 
-Build the bootstrapper that creates the Phase 1 artefacts in any new project. Writing the setup skill forces the artefact formats to be fully specified — the seed templates bundled with the skill are the canonical definitions.
+Status: implementation complete
 
-Modelled on `setup-matt-pocock-skills`: interactive and prompt-driven, not a deterministic script. Walks the user through three decisions (issue tracker, triage labels, domain docs) and writes the configuration. Domain docs section targets `DOMAIN_DICTIONARY.md` instead of `CONTEXT.md`. Seed templates for all Phase 1 artefacts are co-located in the skill directory.
+Built `setup-dc23-skills`: interactive and prompt-driven, modelled on `setup-matt-pocock-skills`. Walks the user through three decisions (issue tracker, triage labels, domain docs). Domain docs section targets `DOMAIN_DICTIONARY.md` instead of `CONTEXT.md`. Seed templates for all Phase 1 artefacts (`docs/agents/domain.md`, `adr.md`, `plans.md`, `docs/handoffs/TEMPLATE.md`) are bundled in `assets/` within the skill directory.
 
-`docs/agents/domain.md` in this repo is both the live instruction file for agent sessions and the staging source for the seed file bundled with this skill. When building `setup-dc23-skills`, copy it as the seed and remove the `skills/` entry from the file structure diagram (the only repo-specific line).
-
-Also in this phase: update `to-issues` — one line, replacing the `/setup-matt-pocock-skills` reference with `/setup-dc23-skills`. No other changes needed.
+`to-issues` received a full DC23 revision (beyond the originally scoped one-liner): neutral HITL/AFK framing (removed "prefer AFK over HITL"), per-type triage label assignment on publish (HITL → `ready-for-human`, AFK → `ready-for-agent`), `DOMAIN_DICTIONARY.md` vocabulary reference, and `## Type` field added to the issue body template. Proper source created at `skills/engineering/to-issues/`.
 
 ### Phase 3 — Update `project-handoff` (DC23/skills#11)
 
@@ -134,4 +132,4 @@ Deferred with no immediate use: `diagnose`, `prototype`.
 ## Open questions
 
 - **`docs/issues.md`** — the original braindump flagged this as an on-disk issue tracker for projects without a remote. No clear design yet and the repo uses GitHub Issues. Left out of scope until there is a concrete use case.
-- **Utility skills directory name** — to be decided during Phase 0, with the full range of skills that will eventually live there in mind (including skills with GPL constraints not yet in this repo).
+- **Utility skills directory name** — resolved during Phase 0: `skills/utility/`.
