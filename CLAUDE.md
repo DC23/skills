@@ -41,7 +41,7 @@ Uses the five canonical triage labels with default strings. See `docs/agents/tri
 
 ### Domain docs
 
-Single-context layout: one `CONTEXT.md` at the repo root, `docs/adr/` for decisions. See `docs/agents/domain.md`.
+Single-context layout: one `DOMAIN_DICTIONARY.md` at the repo root, `docs/adr/` for decisions. See `docs/agents/domain.md`.
 
 ## Conventions
 
