@@ -71,13 +71,15 @@ Build the bootstrapper that creates the Phase 1 artefacts in any new project. Wr
 
 Modelled on `setup-matt-pocock-skills`: interactive and prompt-driven, not a deterministic script. Walks the user through three decisions (issue tracker, triage labels, domain docs) and writes the configuration. Domain docs section targets `DOMAIN_DICTIONARY.md` instead of `CONTEXT.md`. Seed templates for all Phase 1 artefacts are co-located in the skill directory.
 
+`docs/agents/domain.md` in this repo is both the live instruction file for agent sessions and the staging source for the seed file bundled with this skill. When building `setup-dc23-skills`, copy it as the seed and remove the `skills/` entry from the file structure diagram (the only repo-specific line).
+
 Also in this phase: update `to-issues` — one line, replacing the `/setup-matt-pocock-skills` reference with `/setup-dc23-skills`. No other changes needed.
 
 ### Phase 3 — Update `project-handoff` (DC23/skills#11)
 
 Update the existing skill to write to the new artefacts:
 
-- Domain terms go to `DOMAIN_DICTIONARY.md` instead of `CONTEXT.md`
+- Domain terms: the skill **flags** candidate terms in the handoff document ("these terms appeared this session and may warrant dictionary entries") rather than writing them to `DOMAIN_DICTIONARY.md` directly. `grill-with-domain` is the write path for the dictionary; `project-handoff` feeds it a backlog. This keeps handoff lightweight and dictionary entries properly reasoned.
 - Handoff output follows the Phase 1 template; the skill references it explicitly
 - ADR index is maintained alongside each new ADR entry
 
