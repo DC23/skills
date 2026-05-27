@@ -59,6 +59,8 @@ Mirror the mattpocock repository layout: engineering skills in a subdirectory, g
 
 ### Phase 1 — Standardise artefacts (DC23/skills#9)
 
+Status: implementation complete
+
 Design the artefact formats before any skill is written or updated. This phase is primarily a design and writing session, not implementation.
 
 1. **`DOMAIN_DICTIONARY.md` format** — define sections, distinguish the structure from a flat glossary, establish what moves here from `CONTEXT.md` and what doesn't. The name implies richer structure: entity relationships, concept definitions, and the *why* behind terminology choices, not just a vocabulary list.
