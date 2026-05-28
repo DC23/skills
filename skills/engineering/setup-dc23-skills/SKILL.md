@@ -150,6 +150,16 @@ Do not overwrite any of these files if they already exist and contain user conte
 
    Skip any label that already exists — do not update its colour or description.
 
+**Also ensure the three category labels exist on the repo:**
+
+   | Label         | Colour   | Description                              |
+   |---------------|----------|------------------------------------------|
+   | `bug`         | `d73a4a` | Something isn't working                  |
+   | `enhancement` | `a2eeef` | A feature request from the community     |
+   | `roadmap`     | `B090EB` | A planned feature on the project roadmap |
+
+   Same rule: skip any that already exist — do not update colour or description.
+
 ### 5. Done
 
 Tell the user the setup is complete and which DC23 engineering skills will now read from these files: `to-issues`, `triage`, `project-handoff`, `grill-with-docs`, `domain-review`, `session-start`.
