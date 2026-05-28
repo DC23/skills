@@ -2,6 +2,7 @@
 
 Skills for software development workflows, ordered by use in a session.
 
+- **[begin-coding](./begin-coding/SKILL.md)** — Start a coding session by loading project context, domain model, and session conventions, then confirming the baseline test state.
 - **[setup-dc23-skills](./setup-dc23-skills/SKILL.md)** — Bootstrap a new project with the DC23 engineering skill configuration: issue tracker, triage labels, domain docs, and handoff template.
 - **[grill-with-docs](./grill-with-docs/SKILL.md)** — Stress-test a plan against the project's established domain language and documented decisions; updates the domain dictionary and ADRs inline as terms resolve.
 - **[to-issues](./to-issues/SKILL.md)** — Break a plan into independently-grabbable vertical-slice issues on the project issue tracker.

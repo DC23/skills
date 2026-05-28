@@ -6,6 +6,7 @@ Personal collection of skills, tailored to how I work.
 
 Skills for software development workflows — test-driven development, session management, and project continuity.
 
+- [begin-coding](skills/engineering/begin-coding/) — Start a coding session by loading project context, domain model, and session conventions, then confirming the baseline test state.
 - [setup-dc23-skills](skills/engineering/setup-dc23-skills/) — Bootstrap a new project with the DC23 engineering skill configuration: issue tracker, triage labels, domain docs, and handoff template.
 - [grill-with-docs](skills/engineering/grill-with-docs/) — Stress-test a plan against the project's established domain language and documented decisions; updates the domain dictionary and ADRs inline as terms resolve.
 - [to-issues](skills/engineering/to-issues/) — Break a plan into independently-grabbable vertical-slice issues on the project issue tracker.

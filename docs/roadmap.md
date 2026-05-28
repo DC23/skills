@@ -29,9 +29,9 @@ This ecosystem is heavily inspired by [Matt Pocock's engineering skills](https:/
 | `grill-with-docs` | Done (DC23 fork) | 4 | `DOMAIN_DICTIONARY.md` format |
 | `domain-review` | Done (new skill) | 4 | `DOMAIN_DICTIONARY.md` format |
 | `triage` | Substantial revision | 4b | `setup-dc23-skills`, `grill-with-docs` |
-| `session-start` | To build | 5 | Handoff template, `DOMAIN_DICTIONARY.md`, `tdd` |
+| `begin-coding` | Done (new skill) | 5 | Handoff template, `DOMAIN_DICTIONARY.md`, `tdd` |
 
-`setup-matt-pocock-skills` is superseded by `setup-dc23-skills` for this ecosystem. `to-issues` and `triage` are installed from mattpocock/skills and will be revised in place.
+`setup-matt-pocock-skills` is superseded by `setup-dc23-skills` for this ecosystem.
 
 ### Artefacts
 
@@ -112,25 +112,25 @@ Status: implementation complete
 
 **Missing triage labels** (noted in issue): not a triage skill problem — resolved by running `/setup-dc23-skills`.
 
-### Phase 5 — `session-start` (DC23/skills#13)
+### Phase 5 — `begin-coding` (DC23/skills#13)
 
-Build the session-open counterpart to `project-handoff`. The skill has two distinct sections:
+Status: implementation complete
 
-**Workflow** — what the skill does on invocation:
+The session-open counterpart to `project-handoff`. Named `begin-coding` rather than `session-start` to signal coding sessions specifically — other session types may get their own bookend skills later without ambiguity. `project-handoff` is left unchanged; its functionality is general enough to serve non-coding sessions.
 
-1. Load memory index
-2. Load `docs/DOMAIN_DICTIONARY.md`
-3. Load `tdd` skill
-4. Read the summary block from the most recent handoff doc (not the full document — this is why the Phase 1 template matters)
-5. Read the most relevant open plan, if one exists
-6. Run the test suite and confirm baseline state
-7. Report ready
+The skill has two distinct sections:
 
-**Standing instructions** — behavioural conventions that govern the session, replacing what would otherwise clutter `CLAUDE.md`:
+**Workflow** — runs once on invocation, in order: load project memory; load domain dictionary; activate `/tdd`; read summary block only from the most recent handoff (above the first `---` separator); load the active plan if referenced; run the test suite; report ready.
 
-- Check `docs/handoffs/INDEX.md` before re-deriving past work
-- Use `tdd` for all implementation tasks
-- Other session conventions as they emerge
+**Standing instructions** — govern the whole session: check `docs/handoffs/INDEX.md` before re-deriving past work; use TDD for all implementation; use domain vocabulary; check `docs/adr/INDEX.md` before architectural decisions; read the full handoff when deeper context is needed.
+
+**Handoff reading** — the summary block (Baseline + Outstanding) is the machine-readable entry point. The narrative sections below the separator serve two purposes: human review of session history, and on-demand agent context mid-session. The standing instruction "if deeper session context is needed, read the relevant handoff in full" is the mechanism for the second case.
+
+#### Notes & questions from user
+
+- See issue #16, though perhaps I should hold to my original plan of visiting these ideas at a later time. The 4 overarching principles will interact with my TDD skill and I need to work through how that plays out in practice.
+  - I think that evaluating the impact of these 4 principles on agent coding behaviour with a `skill-creator` evaluation loop on coding tasks could be one approach.
+  - Implementation is out of scope for Phase 5. Some discussion is In Scope.
 
 ---
 
