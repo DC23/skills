@@ -47,6 +47,10 @@ Single-context layout: `docs/DOMAIN_DICTIONARY.md`, `docs/adr/` for decisions. S
 
 The `main` branch is protected — all changes must be made in a feature branch and merged via pull request.
 
+## Releases
+
+Tag `vX.Y.Z` from main, then update `VERSION` in `scripts/install-dc23-skills.sh` via a follow-up PR.
+
 ## Conventions
 
 - British English in skill prose
