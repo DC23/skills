@@ -4,7 +4,7 @@ Personal collection of skills, tailored to how I work.
 
 ## Engineering
 
-Skills for software development workflows — test-driven development, session management, and project continuity.
+Skills for software development workflows. The priority is quality over speed, and staying in the loop on what the agent builds. See the [Engineering skills README](skills/engineering/README.md) for the thinking behind them.
 
 - [begin-coding](skills/engineering/begin-coding/) — Start a coding session by loading project context, domain model, and session conventions, then confirming the baseline test state.
 - [setup-dc23-skills](skills/engineering/setup-dc23-skills/) — Bootstrap a new project with the DC23 engineering skill configuration: issue tracker, triage labels, domain docs, and handoff template.
