@@ -12,6 +12,7 @@ Skills for software development workflows — test-driven development, session m
 - [tdd](skills/engineering/tdd/) — Test-driven development with a red-green-refactor loop.
 - [project-handoff](skills/engineering/project-handoff/) — Summarise the current session and update project documents so work can continue efficiently in a fresh session.
 - [domain-review](skills/engineering/domain-review/) — Work through pending domain candidate terms one at a time, promoting, rejecting, or deferring each into the domain dictionary.
+- [triage](skills/engineering/triage/) — Move issues through a triage state machine: classify, reproduce, grill, brief, and close.
 
 ## Utility
 

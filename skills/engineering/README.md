@@ -8,3 +8,4 @@ Skills for software development workflows, ordered by use in a session.
 - **[tdd](./tdd/SKILL.md)** — Test-driven development with a red-green-refactor loop. Builds features or fixes bugs one vertical slice at a time.
 - **[project-handoff](./project-handoff/SKILL.md)** — Summarise the current session and update project documents so work can continue efficiently in a fresh session.
 - **[domain-review](./domain-review/SKILL.md)** — Work through pending domain candidate terms one at a time, promoting, rejecting, or deferring each into the domain dictionary.
+- **[triage](./triage/SKILL.md)** — Move issues through a triage state machine: classify, reproduce, grill, brief, and close.
