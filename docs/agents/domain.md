@@ -7,7 +7,7 @@ How the engineering skills should consume this repo's domain documentation when 
 - **`docs/DOMAIN_DICTIONARY.md`**
 - **`docs/adr/`** — read ADRs that touch the area you're about to work in.
 
-**If any of these files don't exist, proceed silently.** Don't flag their absence; don't suggest creating them upfront. Absence is normal — not every project needs a domain dictionary, and the artefacts are created lazily when terms or decisions actually get resolved. `/grill-with-domain` creates `docs/DOMAIN_DICTIONARY.md`; new ADRs are written when decisions warrant them.
+**If any of these files don't exist, proceed silently.** Don't flag their absence; don't suggest creating them upfront. Absence is normal — not every project needs a domain dictionary, and the artefacts are created lazily when terms or decisions actually get resolved. `/grill-with-docs` creates `docs/DOMAIN_DICTIONARY.md`; new ADRs are written when decisions warrant them.
 
 ## File structure
 
@@ -60,13 +60,13 @@ Rejected terms stay in the backlog with a reason, to prevent the same argument r
 **Source:** docs/handoffs/2026-03-01-1100-session-name.md
 ```
 
-Accepted terms are deleted from the file. `/grill-with-domain` is the write path for promoting candidates into the dictionary.
+Accepted terms are deleted from the file. `/domain-review` is the write path for promoting candidates into the dictionary.
 
 ## Use the dictionary's vocabulary
 
 When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, a test name), use the term as defined in `docs/DOMAIN_DICTIONARY.md`. Don't drift to synonyms the dictionary explicitly avoids.
 
-If the concept you need isn't in the dictionary yet, that's a signal — either you're inventing language the project doesn't use (reconsider) or there's a real gap (note it for `/grill-with-domain`).
+If the concept you need isn't in the dictionary yet, that's a signal — either you're inventing language the project doesn't use (reconsider) or there's a real gap (note it for `/domain-review`).
 
 ## Flag ADR conflicts
 

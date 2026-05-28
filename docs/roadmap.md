@@ -26,8 +26,9 @@ This ecosystem is heavily inspired by [Matt Pocock's engineering skills](https:/
 | `setup-dc23-skills` | Done | 2 | Artefact formats (Phase 1) |
 | `to-issues` | Done (DC23 revision) | 2 | `setup-dc23-skills` |
 | `project-handoff` | Heavy revision | 3 | Artefact formats (Phase 1) |
-| `grill-with-domain` | To build | 4 | `DOMAIN_DICTIONARY.md` format |
-| `triage` | Substantial revision | 4b | `setup-dc23-skills`, `grill-with-domain` |
+| `grill-with-docs` | Done (DC23 fork) | 4 | `DOMAIN_DICTIONARY.md` format |
+| `domain-review` | Done (new skill) | 4 | `DOMAIN_DICTIONARY.md` format |
+| `triage` | Substantial revision | 4b | `setup-dc23-skills`, `grill-with-docs` |
 | `session-start` | To build | 5 | Handoff template, `DOMAIN_DICTIONARY.md`, `tdd` |
 
 `setup-matt-pocock-skills` is superseded by `setup-dc23-skills` for this ecosystem. `to-issues` and `triage` are installed from mattpocock/skills and will be revised in place.
@@ -81,7 +82,7 @@ Status: implementation complete
 
 Update the existing skill to write to the new artefacts:
 
-- Domain terms: the skill **flags** candidate terms in the handoff document ("these terms appeared this session and may warrant dictionary entries") rather than writing them to `DOMAIN_DICTIONARY.md` directly. `grill-with-domain` is the write path for the dictionary; `project-handoff` feeds it a backlog. This keeps handoff lightweight and dictionary entries properly reasoned.
+- Domain terms: the skill **flags** candidate terms in the handoff document ("these terms appeared this session and may warrant dictionary entries") rather than writing them to `DOMAIN_DICTIONARY.md` directly. `domain-review` is the write path for the dictionary; `project-handoff` feeds it a backlog. This keeps handoff lightweight and dictionary entries properly reasoned.
 - Handoff output follows the Phase 1 template; the skill references it explicitly
 - ADR index is maintained alongside each new ADR entry
 
@@ -89,9 +90,13 @@ Update the existing skill to write to the new artefacts:
 
 - domain terms can't be flagged into harness memory. I work across machines, or with small teams. The implementation of candidate terms needs a source controlled backlog file in the project, so it's persistent and shared. Once reviewed and added to the domain dictionary, they can be deleted but if reviewed and not added then perhaps they should be retained with a reason for why they weren't added. This can avoid reprosecuting the same terms again later. Or maybe they are an alias or duplicate, and added to the domain dictionary as aliases to avoid.
 
-### Phase 4 — `grill-with-domain` (DC23/skills#12)
+### Phase 4 — `grill-with-docs` and `domain-review` (DC23/skills#12)
 
-Fork `grill-with-docs` to target `DOMAIN_DICTIONARY.md`. The grilling questions need adapting for domain-model structure (entity relationships, terminology decisions, the *why* behind names) rather than a flat context dump. The skill also maintains the ADR index on decisions crystallised during the session.
+Two skills, not one. Planning revealed that "grill a plan using domain docs" and "maintain the domain model" are distinct jobs that shouldn't share a name or a skill.
+
+**`grill-with-docs`** — DC23 fork of mattpocock's `grill-with-docs`. Swaps `CONTEXT.md` → `docs/DOMAIN_DICTIONARY.md`, removes multi-context branch, points format references at `docs/agents/domain.md` and `docs/agents/adr.md`. Episodic; triggered before major work or new project phases to stress-test a plan against established language.
+
+**`domain-review`** — Original skill. Works through `docs/DOMAIN_CANDIDATES.md` entries one at a time, grilling the user on each to decide: promote to the dictionary, reject with reason (retained to prevent re-litigation), or defer. The primary write path for `docs/DOMAIN_DICTIONARY.md`; `project-handoff` feeds it candidates.
 
 ### Phase 4b — Revise `triage` (DC23/skills#14)
 
@@ -99,7 +104,7 @@ More than a reference update. Two areas of work:
 
 **Category model** — extend from two categories (`bug`, `enhancement`) to three: `bug`, `enhancement` (community-requested), and `roadmap` (planned project work). The distinction is semantically meaningful — a roadmap issue doesn't require community validation or the same fleshing-out process as a cold feature request, and it's a common pattern across projects.
 
-**Reference updates** — replace `/setup-matt-pocock-skills` with `/setup-dc23-skills` and `/grill-with-docs` with `/grill-with-domain`.
+**Reference updates** — replace `/setup-matt-pocock-skills` with `/setup-dc23-skills` and update the `/grill-with-docs` reference to the DC23 fork.
 
 Note: the state role labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`) are absent from the repo — likely due to an interrupted setup session rather than a deliberate omission. Confirm whether `setup-dc23-skills` needs to own this or whether it's handled by completing setup.
 
@@ -129,7 +134,7 @@ Build the session-open counterpart to `project-handoff`. The skill has two disti
 
 Skills from the mattpocock engineering ecosystem not in the active roadmap:
 
-- **`improve-codebase-architecture`** — find architecture improvement opportunities informed by domain language and ADRs. References `CONTEXT.md` explicitly; would need the same `DOMAIN_DICTIONARY.md` adaptation as `grill-with-domain`. Low effort once that pattern is established.
+- **`improve-codebase-architecture`** — find architecture improvement opportunities informed by domain language and ADRs. References `CONTEXT.md` explicitly; would need the same `DOMAIN_DICTIONARY.md` adaptation already done for `grill-with-docs`. Low effort once that pattern is established.
 - **`to-prd`** — turn conversation context into a PRD submitted as a GitHub issue. Self-contained; unlikely to need more than a bootstrap skill reference update.
 - **`zoom-out`** — prompt the agent for broader context on an unfamiliar section of code. Very lightweight; may need no modification at all.
 

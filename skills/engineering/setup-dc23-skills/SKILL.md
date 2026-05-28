@@ -1,6 +1,6 @@
 ---
 name: setup-dc23-skills
-description: Sets up an `## Agent skills` block in CLAUDE.md/AGENTS.md and `docs/agents/` so the DC23 engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. Also seeds `docs/handoffs/TEMPLATE.md`, ADR conventions, and plans conventions. Run before first use of `to-issues`, `triage`, `project-handoff`, `grill-with-domain`, or `session-start` — or if those skills appear to be missing context about the issue tracker, triage labels, or domain docs.
+description: Sets up an `## Agent skills` block in CLAUDE.md/AGENTS.md and `docs/agents/` so the DC23 engineering skills know this repo's issue tracker (GitHub or local markdown), triage label vocabulary, and domain doc layout. Also seeds `docs/handoffs/TEMPLATE.md`, ADR conventions, and plans conventions. Run before first use of `to-issues`, `triage`, `project-handoff`, `grill-with-docs`, `domain-review`, or `session-start` — or if those skills appear to be missing context about the issue tracker, triage labels, or domain docs.
 disable-model-invocation: true
 ---
 
@@ -61,7 +61,7 @@ Default: each role's string equals its name. Ask the user if they want to overri
 
 **Section C — Domain docs.**
 
-> Explainer: Skills like `tdd`, `grill-with-domain`, `project-handoff`, and `session-start` read a `docs/DOMAIN_DICTIONARY.md` file to understand the project's domain language — entity relationships, terminology decisions, and the *why* behind naming choices. They also read `docs/adr/` for past architectural decisions. This skill will create the `docs/agents/domain.md` file that tells those skills where to look and how to interpret what they find. No decisions are required — just confirm this layout matches your repo's structure.
+> Explainer: Skills like `tdd`, `grill-with-docs`, `domain-review`, `project-handoff`, and `session-start` read a `docs/DOMAIN_DICTIONARY.md` file to understand the project's domain language — entity relationships, terminology decisions, and the *why* behind naming choices. They also read `docs/adr/` for past architectural decisions. This skill will create the `docs/agents/domain.md` file that tells those skills where to look and how to interpret what they find. No decisions are required — just confirm this layout matches your repo's structure.
 
 The DC23 skills always use a single-context layout:
 
@@ -73,7 +73,7 @@ docs/
 
 Confirm this matches the target repo. If the user has a significantly different structure, note it and proceed as close to this layout as possible.
 
-Note: `docs/DOMAIN_DICTIONARY.md` is created lazily by `/grill-with-domain`, not by this skill. Its absence is normal.
+Note: `docs/DOMAIN_DICTIONARY.md` is created lazily by `/grill-with-docs`, not by this skill. Its absence is normal.
 
 ### 3. Confirm and edit
 
@@ -152,6 +152,6 @@ Do not overwrite any of these files if they already exist and contain user conte
 
 ### 5. Done
 
-Tell the user the setup is complete and which DC23 engineering skills will now read from these files: `to-issues`, `triage`, `project-handoff`, `grill-with-domain`, `session-start`.
+Tell the user the setup is complete and which DC23 engineering skills will now read from these files: `to-issues`, `triage`, `project-handoff`, `grill-with-docs`, `domain-review`, `session-start`.
 
 Mention they can edit `docs/agents/*.md` directly later — re-running this skill is only necessary if they want to switch issue trackers or restart from scratch.
