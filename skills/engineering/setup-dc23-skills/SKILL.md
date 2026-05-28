@@ -132,6 +132,24 @@ Additionally, write these files silently (no user decision required — they are
 
 Do not overwrite any of these files if they already exist and contain user content — check first and skip or ask.
 
+**If GitHub is the chosen issue tracker, ensure the five canonical triage labels exist on the repo:**
+
+1. Run `gh label list --json name --jq '[.[].name]'` to get the current label names.
+2. For each of the five label strings from the triage-labels mapping, check if it is already present.
+3. Create any that are missing with `gh label create`. Use these defaults:
+
+   | Label             | Colour   | Description                                      |
+   |-------------------|----------|--------------------------------------------------|
+   | `needs-triage`    | `F5A623` | Maintainer needs to evaluate this issue          |
+   | `needs-info`      | `5D93C4` | Waiting on reporter for more information         |
+   | `ready-for-agent` | `1BC97E` | Fully specified, ready for an AFK agent          |
+   | `ready-for-human` | `E8734A` | Requires human implementation                    |
+   | `wontfix`         | `6B6B6B` | Will not be actioned                             |
+
+   Example: `gh label create "needs-triage" --color "F5A623" --description "Maintainer needs to evaluate this issue"`
+
+   Skip any label that already exists — do not update its colour or description.
+
 ### 5. Done
 
 Tell the user the setup is complete and which DC23 engineering skills will now read from these files: `to-issues`, `triage`, `project-handoff`, `grill-with-domain`, `session-start`.
