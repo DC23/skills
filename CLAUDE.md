@@ -43,6 +43,10 @@ Uses the five canonical triage labels with default strings. See `docs/agents/tri
 
 Single-context layout: `docs/DOMAIN_DICTIONARY.md`, `docs/adr/` for decisions. See `docs/agents/domain.md`.
 
+## Branching
+
+The `main` branch is protected — all changes must be made in a feature branch and merged via pull request.
+
 ## Conventions
 
 - British English in skill prose
