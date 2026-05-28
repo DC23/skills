@@ -100,13 +100,17 @@ Two skills, not one. Planning revealed that "grill a plan using domain docs" and
 
 ### Phase 4b — Revise `triage` (DC23/skills#14)
 
-More than a reference update. Two areas of work:
+Status: implementation complete
 
-**Category model** — extend from two categories (`bug`, `enhancement`) to three: `bug`, `enhancement` (community-requested), and `roadmap` (planned project work). The distinction is semantically meaningful — a roadmap issue doesn't require community validation or the same fleshing-out process as a cold feature request, and it's a common pattern across projects.
+**Category model** — extended from two categories to three: `bug`, `enhancement` (community-requested), and `roadmap` (planned project work). `roadmap` wontfix path skips `.out-of-scope/`; `.out-of-scope/` check in gather-context is also skipped for roadmap issues.
 
-**Reference updates** — replace `/setup-matt-pocock-skills` with `/setup-dc23-skills` and update the `/grill-with-docs` reference to the DC23 fork.
+**Reference updates** — `/setup-matt-pocock-skills` → `/setup-dc23-skills`. The `/grill-with-docs` reference was already correct.
 
-Note: the state role labels (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`) are absent from the repo — likely due to an interrupted setup session rather than a deliberate omission. Confirm whether `setup-dc23-skills` needs to own this or whether it's handled by completing setup.
+**ADR linkage** — `OUT-OF-SCOPE.md` now includes guidance on referencing a relevant ADR in the reason section when a rejection is grounded in an architectural decision. No bidirectional linkage from ADRs.
+
+**Category labels** — `setup-dc23-skills` extended to ensure `bug`, `enhancement`, and `roadmap` labels exist on GitHub repos alongside the existing triage state labels.
+
+**Missing triage labels** (noted in issue): not a triage skill problem — resolved by running `/setup-dc23-skills`.
 
 ### Phase 5 — `session-start` (DC23/skills#13)
 
