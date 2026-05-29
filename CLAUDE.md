@@ -43,13 +43,13 @@ Uses the five canonical triage labels with default strings. See `docs/agents/tri
 
 Single-context layout: `docs/DOMAIN_DICTIONARY.md`, `docs/adr/` for decisions. See `docs/agents/domain.md`.
 
-## Branching
+## GitHub Instructions
 
 The `main` branch is protected — all changes must be made in a feature branch and merged via pull request.
 
-## Releases
+The current PAT does not permit agents to create or manage pull requests. Push the feature branch and stop — the user handles PR creation, review, and merge.
 
-Tag `vX.Y.Z` from main, then update `VERSION` in `scripts/install-dc23-skills.sh` via a follow-up PR.
+Releases follow semver. Tag `vX.Y.Z` from main, then update `VERSION` in `scripts/install-dc23-skills.sh` via a follow-up PR.
 
 ## Conventions
 
