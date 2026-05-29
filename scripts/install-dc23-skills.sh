@@ -8,7 +8,7 @@
 #
 set -e
 
-VERSION="v1.0.0"
+VERSION="v1.1.0"
 BASE="https://github.com/DC23/skills/tree/${VERSION}/skills/engineering"
 
 AGENTS=()
