@@ -49,7 +49,7 @@ The `main` branch is protected — all changes must be made in a feature branch 
 
 The current PAT does not permit agents to create or manage pull requests. Push the feature branch and stop — the user handles PR creation, review, and merge.
 
-Releases follow semver. Tag `vX.Y.Z` from main, then update `VERSION` in `scripts/install-dc23-skills.sh` via a follow-up PR.
+Releases follow semver. First update `VERSION` in `scripts/install-dc23-skills.sh` via a PR merged to main, then tag `vX.Y.Z` from the resulting main commit.
 
 ## Conventions
 
