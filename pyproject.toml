@@ -1,0 +1,14 @@
+[project]
+name = "dc23-skills"
+version = "0.0.0"
+
+[tool.bumpversion]
+current_version = "v1.1.1"
+commit = true
+message = "Bump VERSION to {new_version}"
+tag = false
+
+[[tool.bumpversion.files]]
+filename = "scripts/install-dc23-skills.sh"
+search = 'VERSION="{current_version}"'
+replace = 'VERSION="{new_version}"'
