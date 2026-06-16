@@ -17,7 +17,22 @@ Read `docs/DOMAIN_CANDIDATES.md`. If the file does not exist or contains no `pen
 
 ### 2. Review each pending entry
 
-Take entries one at a time. For each one, tell the user the term and its flagged note, then grill them to reach a decision. Ask questions one at a time, waiting for the answer before continuing:
+Take entries one at a time. For each one, assess whether it meets the **clear** threshold before opening the Q&A loop:
+
+A candidate is **clear** when all of the following hold:
+- It is standard domain or technical vocabulary with no naming ambiguity
+- Its name matches or is directly derived from an existing ADR or dictionary entry
+- There is no obvious competing name worth considering
+
+**If clear:** propose a one-sentence definition and present a single confirm-or-redirect prompt:
+
+> **[Term]** — _[proposed definition]_
+> Confirm to promote, or redirect to step through the full review questions.
+
+- If the user confirms, promote the entry as in step 3 and move to the next candidate.
+- If the user redirects, fall back to the full Q&A loop for that candidate (below).
+
+**If not clear** (contested, ambiguous, or uncertain), or after a redirect: tell the user the term and its flagged note, then grill them to reach a decision. Ask questions one at a time, waiting for the answer before continuing:
 
 - Is this a genuine domain concept — something domain experts and developers would use consistently — or is it an implementation detail or incidental vocabulary?
 - Does it conflict with or duplicate an existing term in the dictionary? If so, should it become an alias or replace the existing term?
