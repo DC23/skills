@@ -6,7 +6,7 @@ A personal collection of Claude Code skills, developed and maintained by DC23.
 
 Each skill lives in `skills/<name>/` and contains at minimum a `SKILL.md` — the instruction file loaded when the skill is invoked. Some skills include a `PROVENANCE.md` noting upstream sources.
 
-Skills installed into the Claude Code harness live in `.claude/skills/`. The `skills/` directory is the source; `.claude/skills/` is where the harness reads from.
+Skills installed into the Claude Code harness live in `.claude/skills/`. The `skills/` directory is the source of truth; `.claude/skills/` is a build artefact populated by the install script. Never edit `.claude/skills/` directly.
 
 ## Skill Structure
 
@@ -24,6 +24,8 @@ Frontmatter fields in `SKILL.md`:
 - `disable-model-invocation` — set `true` to prevent recursive model calls (useful for review/audit skills)
 
 ## Working on Skills
+
+**Always edit `skills/`, never `.claude/skills/`.** Both directories contain `SKILL.md` files with identical names — `.claude/skills/` is what the harness invokes at runtime, but `skills/` is what gets edited. The install script propagates source changes to the installed copy. If an issue, brief, or acceptance criterion says "update both files", that is wrong — flag it and edit only the source.
 
 Use `/skill-creator` to create, edit, evaluate, or benchmark skills. It handles the full lifecycle: drafting, evals, description optimisation, and packaging.
 
