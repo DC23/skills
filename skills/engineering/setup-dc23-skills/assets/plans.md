@@ -13,8 +13,10 @@ How the engineering skills should save and index in-progress plans for this proj
 Append one line to `docs/plans/INDEX.md` when saving a plan:
 
 ```
-- [YYYY-MM-DD-HHMM-description.md](YYYY-MM-DD-HHMM-description.md) — topic, topic, symbol
+- [YYYY-MM-DD-HHMM-description.md](YYYY-MM-DD-HHMM-description.md) [pending] — topic, topic, symbol
 ```
+
+The status tag appears immediately after the filename link and before the topic summary. Valid values are `[pending]`, `[partial]`, or `[done]`.
 
 Topics should be enough to locate the plan without opening it — scope, key files, phase or feature name.
 
