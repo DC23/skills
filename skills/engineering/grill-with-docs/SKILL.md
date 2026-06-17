@@ -16,7 +16,7 @@ During codebase exploration, also look for existing documentation:
 - `docs/DOMAIN_DICTIONARY.md` — domain model, entity relationships, terminology and the *why* behind naming choices
 - `docs/adr/` — architectural decisions; read ADRs that touch the area being discussed
 
-Create files lazily — only when you have something to write. If `docs/DOMAIN_DICTIONARY.md` does not exist, create it when the first term is resolved. If `docs/adr/` does not exist, create it when the first ADR is needed.
+Create files lazily — only when you have something to write. If `docs/adr/` does not exist, create it when the first ADR is needed.
 
 Format rules for both files are in `docs/agents/domain.md` and `docs/agents/adr.md`.
 
@@ -38,11 +38,11 @@ When domain relationships are being discussed, stress-test them with specific sc
 
 When the user states how something works, check whether the code agrees. If you find a contradiction, surface it: "Your code cancels entire Orders, but you just said partial cancellation is possible — which is right?"
 
-### Update DOMAIN_DICTIONARY.md inline
+### Stage resolved terms
 
-When a term is resolved, update `docs/DOMAIN_DICTIONARY.md` right there. Don't batch these up — capture them as they happen. Use the format in `docs/agents/domain.md`.
+When a term is resolved, identify whether it qualifies as Ubiquitous Language: domain entities, relationships, and named processes that domain experts and developers would use consistently — not implementation details or incidental vocabulary. Be conservative — fewer, well-chosen candidates are more useful than a long list of noise.
 
-`docs/DOMAIN_DICTIONARY.md` should be totally devoid of implementation details. Do not treat it as a spec, a scratch pad, or a repository for implementation decisions. It is a domain model glossary and nothing else.
+For each qualifying term, append a candidate entry to `docs/DOMAIN_CANDIDATES.md` (creating the file if absent) using the format in `docs/agents/domain.md`. Do not write directly to `docs/DOMAIN_DICTIONARY.md` — terms are promoted into the dictionary only via the `domain-review` skill.
 
 ### Offer ADRs sparingly
 
