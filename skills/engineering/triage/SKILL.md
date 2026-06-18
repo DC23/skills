@@ -15,8 +15,8 @@ Every comment or issue posted to the issue tracker during triage **must** start 
 
 ## Reference docs
 
-- [AGENT-BRIEF.md](AGENT-BRIEF.md) — how to write durable agent briefs
-- [OUT-OF-SCOPE.md](OUT-OF-SCOPE.md) — how the `.out-of-scope/` knowledge base works
+- [references/AGENT-BRIEF.md](references/AGENT-BRIEF.md) — how to write durable agent briefs
+- [references/OUT-OF-SCOPE.md](references/OUT-OF-SCOPE.md) — how the `.out-of-scope/` knowledge base works
 
 ## Roles
 
@@ -74,11 +74,11 @@ Issues carrying the `epic` label must be excluded from all three buckets silentl
 4. **Grill (if needed).** If the issue needs fleshing out, run a `/grill-with-docs` session. If the issue must be deferred because it requires further grilling or analysis before a state can be assigned, apply the `question` label in addition to `needs-triage`. This marks it as "parked, needs a session" — distinguishable from issues not yet looked at.
 
 5. **Apply the outcome:**
-   - `ready-for-agent` — before writing a brief, assess whether the issue contains multiple distinct, independently-deliverable pieces. Signals: the body enumerates named deliverables or steps; acceptance criteria span concerns that could be verified independently; implementing everything would require an agent to hold a large, multi-domain context simultaneously. When those signals are present, ask the maintainer whether to run `/to-issues #N` first rather than silently writing a broad brief. If the maintainer declines or the issue is well-scoped, post an agent brief comment ([AGENT-BRIEF.md](AGENT-BRIEF.md)).
+   - `ready-for-agent` — before writing a brief, assess whether the issue contains multiple distinct, independently-deliverable pieces. Signals: the body enumerates named deliverables or steps; acceptance criteria span concerns that could be verified independently; implementing everything would require an agent to hold a large, multi-domain context simultaneously. When those signals are present, ask the maintainer whether to run `/to-issues #N` first rather than silently writing a broad brief. If the maintainer declines or the issue is well-scoped, post an agent brief comment ([references/AGENT-BRIEF.md](references/AGENT-BRIEF.md)).
    - `ready-for-human` — same breadth check as above. If proceeding, same structure as an agent brief but note why it can't be delegated (judgment calls, external access, design decisions, manual testing).
    - `needs-info` — post triage notes (template below).
    - `wontfix` (bug) — polite explanation, then close.
-   - `wontfix` (enhancement, community) — check whether the rejection is grounded in an existing ADR; if so, include a reference in the `.out-of-scope/` file. Write to `.out-of-scope/`, link to it from a comment, then close ([OUT-OF-SCOPE.md](OUT-OF-SCOPE.md)).
+   - `wontfix` (enhancement, community) — check whether the rejection is grounded in an existing ADR; if so, include a reference in the `.out-of-scope/` file. Write to `.out-of-scope/`, link to it from a comment, then close ([references/OUT-OF-SCOPE.md](references/OUT-OF-SCOPE.md)).
    - `wontfix` (roadmap) — comment explaining the cancellation, then close. Do not write to `.out-of-scope/`.
    - `needs-triage` — apply the role. Optional comment if there's partial progress.
 
